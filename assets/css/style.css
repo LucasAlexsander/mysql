@@ -9,8 +9,61 @@
 body {
     background-color: #e9e9e1;
     width: 100vw;
-    height: 200vh; /* Alterar para AUTO (FUTURAMENTE) */
+    height: 1400px; /* Alterar para AUTO (FUTURAMENTE) */
 }
+
+/* FOOTER */
+footer {
+    width: 100vw;
+    height: 250px;
+    background: #464646;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+    grid-area: footer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+footer .text-contact  {
+    width: 1140px;
+    height: 100px;
+}
+footer .text-contact p {
+    font-size: 20px;
+    color: lightgrey;
+    text-align: center;
+    line-height: 35px;
+}
+footer .text-contact p a {
+    text-decoration: none;
+    color: inherit;
+}
+footer .text-contact p a:active {
+    color: inherit;
+}
+
+footer .img-contact {
+    width: 1140px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .img-contact img {
+    width: 50px;
+    height: 50px;
+    margin: -50px 8px 0px 8px;
+    filter: invert(0.89);
+    cursor: pointer;
+}
+
+
+
+
 
 /* Animações */
 
@@ -58,6 +111,7 @@ header {
     display: flex;
     justify-content: space-between;
     position: fixed;
+    grid-area: header;
 }
 
 header .logo {
@@ -135,7 +189,7 @@ section {
     height: auto;
     display: flex;
     justify-content: center;
-
+    grid-area: section;
 }
 .container {
     max-width: 1140px;
@@ -143,3 +197,10 @@ section {
     background: whitesmoke;
     margin: 0px 60px 0px 40px;
 }
+p {
+    color: black;
+}
+
+
+
+/* POSIÇÃO DAS COISAS NO SITE */

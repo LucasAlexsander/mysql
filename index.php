@@ -35,5 +35,8 @@
             </p>
         </div>
     </section>
+
+
+    <? require 'footer.html' ?>
 </body>
 </html>
