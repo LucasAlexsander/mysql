@@ -7,15 +7,15 @@
 }
 
 body {
-    background-color: #e9e9e1;
+    background-color: white;
     width: 100vw;
-    height: 1400px; /* Alterar para AUTO (FUTURAMENTE) */
+    height: auto; /* Alterar para AUTO (FUTURAMENTE) */
 }
 
 /* FOOTER */
 footer {
     width: 100vw;
-    height: 250px;
+    height: 230px;
     background: #464646;
     display: flex;
     justify-content: center;
@@ -24,16 +24,16 @@ footer {
     padding-top: 50px;
     grid-area: footer;
     position: absolute;
-    bottom: 0;
-    left: 0;
+    top: 100;
 }
 
 footer .text-contact  {
     width: 1140px;
     height: 100px;
+    margin-left: -20px;
 }
 footer .text-contact p {
-    font-size: 20px;
+    font-size: 15px;
     color: lightgrey;
     text-align: center;
     line-height: 35px;
@@ -53,13 +53,17 @@ footer .img-contact {
     justify-content: center;
     align-items: center;
 }
-footer .img-contact img {
-    width: 50px;
-    height: 50px;
-    margin: -50px 8px 0px 8px;
+footer .img-contact a {
+    margin-top: -35px;
+    width: 45px;
+    height: auto;
+}
+footer .img-contact a img {
+    margin-right: 15px;
     filter: invert(0.89);
     cursor: pointer;
 }
+
 
 
 
@@ -117,7 +121,7 @@ header {
 header .logo {
     width: 150px;
     height: inherit;
-    margin: 0px 0px 0px 30px;
+    margin: 0px 0px 0px 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,11 +141,35 @@ header .logo::before {
     animation: invert-rotate 5s linear infinite;
 }
 header .logo .ponto {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: black;
-    animation: ponto 1.3s linear infinite;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+header .logo .ponto::before {
+    content: '';
+    position: relative;
+    width: 30px;
+    height: 60px;
+    background: linear-gradient(red, red, transparent, #6893EE, #6893EE);
+    animation: rotate 2.5s linear infinite;
+    /* transform: rotate(45deg); */
+
+}
+header .logo .ponto::after {
+    content: '♣';
+    text-align: center;
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    background: lightblue;
+}
+header .logo .ponto,
+header .logo .ponto::after,
+header .logo .ponto::before {
+    border-radius: 40% 40% 40% 0%;
 }
 
 
@@ -152,7 +180,7 @@ header nav {
     display: flex;
     align-items: center;
     justify-content: end;
-    padding: 0px 30px 0px 0px;
+    padding: 0px 100px 0px 0px;
 }
 
 header nav ul {
@@ -167,7 +195,12 @@ header nav ul li {
 }
 header nav ul li a{
     text-decoration: none;        
-    color: black
+    color: black;
+    border-right: 2px solid black;
+    padding: 0px 10px 0px 0px;
+}
+header nav ul li:last-child a {
+    border-right: 2px solid transparent;
 }
 header nav ul li a:active {
     color: black
@@ -190,17 +223,124 @@ section {
     display: flex;
     justify-content: center;
     grid-area: section;
+    margin-bottom: 30px;
 }
 .container {
-    max-width: 1140px;
+    width: 1140px;
     height: auto;
-    background: whitesmoke;
     margin: 0px 60px 0px 40px;
 }
-p {
-    color: black;
+section .container ul li {
+    margin-top: 8px;
+}
+.flex-column {
+    display: inline-flex;
+    flex-direction: column;
+    width: auto;
+}
+.code {
+    display: inline-block;
+    background: black;
+    margin: 10px 0px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.code p, .code pre, .code h3, .code h4 {
+    color: lightgrey;
 }
 
 
 
-/* POSIÇÃO DAS COISAS NO SITE */
+/* FORMATAÇÃO DO TEXTO */
+h1 {
+    color: #0900BC;
+    text-align: center;
+    font-size: 25px;
+}
+h2 {
+    color: #0900BC;
+    margin: 15px 0px 5px 3px;
+    font-size: 20px;
+}
+h3 {
+    color: black;
+}
+h4 {
+    font-size: 18px;
+}
+
+p, pre {
+    color: black;
+    font-size: 16px;
+    text-indent: 20px; /* Tabulação, espaço no começo da linha */
+}
+span {
+    background: lightskyblue;
+}
+
+/* AREE COM UMA DO LADO DA OUTRA */
+.area-lado {
+    display: inline-flex;    
+    padding: 10px 15px;
+    border: 3px solid lightgrey;
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+.text-left,
+.text-right {
+    margin: 0px 15px;
+}
+.text-right {
+    border-left: 3px solid lightgray;
+    padding-left: 15px;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 750px) {
+    header nav {
+        padding: 0px 50px 0px 0px;
+    }
+    header nav ul li a {
+        font-size: 23px;
+    }
+
+    header .logo {
+        margin: 0px 0px 0px 50px;
+    }
+
+@media (max-width: 610px) {
+    header nav {
+        padding: 0px 25px 0px 0px;
+    }
+    
+    header .logo {
+        margin: 0px 0px 0px 25px;
+    }
+}
+
+@media (max-width: 550px) {
+    header nav {
+        padding: 0px 10px 0px 0px;
+    }
+    header nav ul li a {
+        font-size: 18px;
+    }
+
+    header .logo {
+        margin: 0px 0px 0px 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    header nav {
+        padding: 0px 5px 0px 0px;
+    }
+    header nav ul li a {
+        font-size: 15px;
+    }
+
+    header .logo {
+        margin: 0px 0px 0px 5px;
+    }
+}
